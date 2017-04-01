@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   end
   
   def new
+    @product = Product.new
   end
   
   def create
@@ -12,9 +13,12 @@ class ProductsController < ApplicationController
     @products.description = params[:description]
     @products.picture_url = params[:picture_url]
     @products.price = params[:price]
-    @product.save
     
+    if @product.save
     redirect_to '/products'
+    else 
+        render action: "new"
+    end
   end 
   
   def edit 
@@ -29,7 +33,11 @@ class ProductsController < ApplicationController
     @products.price = params[:price]
     @product.save
     
-    redirect_to '/products'
+    if @product.save
+      redirect_to '/products'
+    else
+      render action: 'edit'
+    end
   end 
   
   def show 

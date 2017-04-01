@@ -1,0 +1,23 @@
+<h1>New Book</h1>
+
+<%= form_tag '/books' do %>
+  <div class='form_group'>
+    <%= text_field_tag :title, '', placeholder: 'Title', class: 'form-control' %>
+  </div>
+  <div class='form_group'>
+    <%= text_field_tag :description, '', placeholder: 'Description', class: 'form-control' %>
+  <div class='form_group'>
+    <%= text_field_tag :pages, '', placeholder: 'Pages', class: 'form-control' %>
+  </div>
+  <div class='form_group'>
+    <%= text_field_tag :author_id, '', placeholder: 'Author_ID', class: 'form-control' %>
+  </div>
+  <div class='form_group'>
+    <%= text_field_tag :amazon_url, '', placeholder: 'Amazon_URL', class: 'form-control' %>
+  </div>
+  <div class='form_group'>
+    <%= text_field_tag :picture_url, '', placeholder: 'Picture_URL', class: 'form-control' %>
+  </div>
+  <div class='form_group'>
+    <%= submit_tag 'Save', class: 'btn btn-default' %>
+<% end %>
